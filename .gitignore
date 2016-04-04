@@ -1,1 +1,3 @@
-_site
+_site_metalsmith
+_site_jekyll
+node_modules
