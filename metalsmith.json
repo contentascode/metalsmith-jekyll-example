@@ -9,14 +9,13 @@
       ".git",
       ".gitignore",
       ".travis.yml",
-      "_content.yml",
       "package.json",
       "metalsmith.json",
-      "metalsmith.tmp.json",
-      "_content.yml",
       "_site",
       "_includes",
       "_layouts",
+      "_sass",
+      "css",
       "LICENSE",
       "README.md"
     ],
@@ -50,6 +49,7 @@
       "engine": "liquid",
       "pattern": "**/*.?(md|html)"
     },
+    "metalsmith-debug": {},
     "metalsmith-pandoc": {
       "pattern": "**/*.md",
       "from": "markdown_github+definition_lists+markdown_in_html_blocks"
@@ -81,7 +81,6 @@
       "default": "default.html",
       "includeDir": "_includes",
       "ext": ".html"
-    },
-    "metalsmith-debug": {}
+    }
   }
 }

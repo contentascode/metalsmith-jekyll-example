@@ -37,7 +37,7 @@ install:
   - npm -g install npm@latest-2
   - npm install 
   - rvm install 2.2.1
-  - gem install github-pages
+  - bundle install
   - stack setup
   - stack install pandoc
 
@@ -45,7 +45,7 @@ before_script:
   - export PATH=$PATH:/home/travis/.cabal/bin
 
 script:
-  - jekyll build --destination _site_jekyll
+  - bundle exec jekyll build --destination _site_jekyll
   - metalsmith build --destination _site_metalsmith
 
 after_script:
