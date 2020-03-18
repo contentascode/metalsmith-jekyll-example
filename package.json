@@ -27,7 +27,7 @@
   "dependencies": {
     "metalsmith": "contentascode/metalsmith",
     "metalsmith-broken-link-checker": "^0.1.9",
-    "metalsmith-collections": "^0.7.0",
+    "metalsmith-collections": "^0.9.0",
     "metalsmith-debug": "0.0.2",
     "metalsmith-dev": "^1.0.0",
     "metalsmith-drafts": "0.0.1",
