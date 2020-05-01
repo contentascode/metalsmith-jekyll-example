@@ -20,7 +20,9 @@
     "deploy": "npm run deploy-push",
     "deploy-push": "cd $CONFIG_REPO && git init && git config user.email \"$GIT_EMAIL\" && git config user.name \"$GIT_NAME\" && git remote add upstream https://${GH_USERNAME}:${GH_TOKEN}@github.com/${CONFIG_OWNER}/${CONFIG_REPO}.git && git fetch upstream && git reset upstream/gh-pages && touch .nojekyll && git add -A . && git commit -a -m \"Travis build $TRAVIS_BUILD_NUMBER\" && git push --quiet upstream HEAD:gh-pages\n",
     "prebuild": "if [ $TRAVIS_PULL_REQUEST -eq 'true'] ; then TRAVIS_BRANCH=$TRAVIS_COMMIT ; fi && echo \"github:\\n  current_branch: $TRAVIS_BRANCH\" > _branch.yml\n",
-    "postbuild": "rm _branch.yml"
+    "postbuild": "rm _branch.yml",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "homepage": "https://github.com/contentascode/docsmith-init#readme",
   "keywords": [],
@@ -44,6 +46,8 @@
     "metalsmith-static": "0.0.5",
     "metalsmith-watch": "^1.0.1",
     "moment": "^2.12.0",
-    "tinyliquid": "contentascode/tinyliquid"
-  }
+    "tinyliquid": "contentascode/tinyliquid",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
